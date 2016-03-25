@@ -13,9 +13,9 @@ import { CaloriePipe } from './calorie.pipe';
   directives: [MealComponent, EditMealDetailsComponent, NewMealComponent],
   template: `
     <select (change)="onChange($event.target.value)" class="filter">
-      <option value="all">All Inventory</option>
-      <option value="unhealthy">Foods with more than 300 calories</option>
-      <option value="healthy">Foods with less than 300 calories</option>
+      <option value="all">All Foods</option>
+      <option value="healthy">Healthy foods :)</option>
+      <option value="unhealthy">Unhealthy foods :(</option>
     </select>
 
     <meal-display *ngFor="#currentMeal of mealList | calories:filterCalories"
