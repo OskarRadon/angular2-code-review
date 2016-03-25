@@ -20,18 +20,22 @@ Angular2, Bower, Node, TypeScript
 
 ### Setup Instructions
 
-1. Open Terminal and clone this repository:
+1. Open Terminal and clone this repository:<br>
     ```https://github.com/oskarradon/angular2-code-review.git
     ```
-2. Within the project directory run:
+2. Within the project directory run:<br>
     ```$ npm install
     ```
+    <br>
     ```$ bower install
     ```
+    <br>
     ```$ gulp build
     ```
+    <br>
     ```$ gulp serve
     ```
+    <br>
 
 #### License
 
