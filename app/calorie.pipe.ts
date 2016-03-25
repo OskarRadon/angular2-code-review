@@ -12,7 +12,7 @@ export class CaloriePipe implements PipeTransform {
       return input.filter((keg) => {
         return (keg.calories > 300);
       });
-    } if (Healthiness === "healthy") {
+    } else if (Healthiness === "healthy") {
       return input.filter((keg) => {
         return (keg.calories < 300);
       });
