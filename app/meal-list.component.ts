@@ -1,7 +1,7 @@
 import { Component, EventEmitter } from 'angular2/core';
 import { MealComponent } from './meal.component';
 import { Meal } from './meal.model';
-import { EditMealDetailsComponent } from './edit-meal-details.component';
+import { MealDetailsComponent } from './meal-details.component';
 import { NewMealComponent } from './new-meal.component';
 import { CaloriePipe } from './calorie.pipe';
 
@@ -10,7 +10,7 @@ import { CaloriePipe } from './calorie.pipe';
   inputs: ['mealList'],
   outputs: ['onMealSelect'],
   pipes: [CaloriePipe],
-  directives: [MealComponent, EditMealDetailsComponent, NewMealComponent],
+  directives: [MealComponent, MealDetailsComponent, NewMealComponent],
   template: `
     <select (change)="onChange($event.target.value)" class="filter">
       <option value="all">All Foods</option>
@@ -23,7 +23,7 @@ import { CaloriePipe } from './calorie.pipe';
     [meal]="currentMeal">
     </meal-display>
 
-    <edit-meal-details *ngIf="selectedMeal" [meal]="selectedMeal"></edit-meal-details>
+    <meal-details *ngIf="selectedMeal" [meal]="selectedMeal"></meal-details>
 
     <new-meal (onSubmitNewMeal)="createMeal($event)"></new-meal>
   `
