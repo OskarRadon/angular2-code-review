@@ -7,14 +7,14 @@ import { Meal } from './meal.model';
 })
 export class CaloriePipe implements PipeTransform {
   transform(input: Meal[], args) {
-    var Healthiness = args[0];
-    if (Healthiness === "unhealthy") {
-      return input.filter((keg) => {
-        return (keg.calories > 300);
+    var healthiness = args[0];
+    if (healthiness === "unhealthy") {
+      return input.filter((meal) {
+        return meal.calories < 301;
       });
-    } else if (Healthiness === "healthy") {
-      return input.filter((keg) => {
-        return (keg.calories < 300);
+    } else if (healthiness === "healthy") {
+      return input.filter((meal) {
+        return meal.calories > 300;
       });
     } else {
       return input;
