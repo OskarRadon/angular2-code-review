@@ -17,20 +17,22 @@ import { CaloriePipe } from './calorie.pipe';
       <option value="unhealthy">Foods with more than 300 calories</option>
       <option value="healthy">Foods with less than 300 calories</option>
     </select>
-    <meal-display *ngFor="#currentMeal of mealList | calories:filterDone"
+
+    <meal-display *ngFor="#currentMeal of mealList | calories:filterCalories"
     (click)="mealClicked(currentMeal)"
     [meal]="currentMeal">
     </meal-display>
-    <edit-meal-details *ngIf="selectedMeal" [meal]="selectedMeal">
-    </edit-meal-details>
+
+    <edit-meal-details *ngIf="selectedMeal" [meal]="selectedMeal"></edit-meal-details>
+
     <new-meal (onSubmitNewMeal)="createMeal($event)"></new-meal>
   `
 })
 export class MealListComponent {
   public mealList: Meal[];
-  public onMealSelect: EventEmitter < Meal > ;
+  public onMealSelect: EventEmitter<Meal>;
   public selectedMeal: Meal;
-  public filterDone: string = "all";
+  public filterCalories: string = "all";
   constructor() {
     this.onMealSelect = new EventEmitter();
   }
@@ -38,10 +40,10 @@ export class MealListComponent {
     this.selectedMeal = clickedMeal;
     this.onMealSelect.emit(clickedMeal);
   }
-  createMeal(createdMeal: Meal): void {
-    this.mealList.push(createdMeal)
+  createMeal(newMeal: Meal): void {
+    this.mealList.push(newMeal);
   }
   onChange(filterOption) {
-    this.filterDone = filterOption;
+    this.filterCalories = filterOption;
   }
 }
