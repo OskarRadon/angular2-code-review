@@ -1,4 +1,4 @@
-import { Component, EventEmitter } from 'angular2/core';
+import { Component } from 'angular2/core';
 import { MealListComponent } from './meal-list.component';
 import { Meal } from './meal.model';
 
@@ -9,8 +9,7 @@ import { Meal } from './meal.model';
     <div class="container">
       <h1>Meals:</h1>
       <meal-list
-      [mealList]="meals"
-      (onMealSelect)="mealWasSelected($event)">
+      [mealList]="meals">
       </meal-list>
     </div>
   `
@@ -25,8 +24,5 @@ export class AppComponent {
       new Meal("Tiramisu", "Very fancy", 550),
       new Meal("Poutine", "Potato Champion is the best", 1000)
     ];
-  }
-  mealWasSelected(clickedMeal: Meal): void {
-    console.log(clickedMeal);
   }
 }
