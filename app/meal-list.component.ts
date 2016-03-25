@@ -19,8 +19,6 @@ import { NewMealComponent } from './new-meal.component';
     </select>
     <meal-display *ngFor="#currentMeal of mealList | pints:filterDone"
     (click)="mealClicked(currentMeal)"
-    [class.fancy]="currentMeal.price > 5"
-    [class.cheap]="currentMeal.price <= 5"
     [meal]="currentMeal">
     </meal-display>
     <edit-meal-details *ngIf="selectedMeal" [meal]="selectedMeal">
@@ -39,7 +37,6 @@ export class MealListComponent {
   mealClicked(clickedMeal: Meal): void {
     this.selectedMeal = clickedMeal;
     this.onMealSelect.emit(clickedMeal);
-    console.log(this.selectedMeal);
   }
   createMeal(createdMeal: Meal): void {
     this.mealList.push(createdMeal)
