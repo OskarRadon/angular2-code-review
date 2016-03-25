@@ -13,7 +13,6 @@ A user will be able to:
  - View a list of only the names of the foods I have logged, and I want to be able to click on a name to view the details and calories for that food.
  - View either all foods, only unhealthy foods that are more than 300 calories, or only healthy foods that are less than 300 calories.
  - Click on a food and then edit its name, details or calories in case I decide to pretend my fries were only 100 calories instead of 365 calories.
-View the site [here](http://oskarradon.github.io/angular2-code-review/).
 
 #### Technologies Used
 Angular2, Bower, Node, TypeScript
