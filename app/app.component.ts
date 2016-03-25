@@ -25,6 +25,6 @@ export class AppComponent {
     ];
   }
   mealWasSelected(clickedMeal: Meal): void {
-    console.log(clickedMeal);
+    console.log(clickedMeal); // This is where the view details will go
   }
 }
