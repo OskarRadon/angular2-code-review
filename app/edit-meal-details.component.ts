@@ -9,9 +9,9 @@ import { Meal } from './meal.model';
     <h4>Name: </h4>
     <input [(ngModel)]="meal.name" class="input-sm meal-name-form"/>
     <h4>Details: </h4>
-    <input [(ngModel)]="meal.brand" class="input-sm meal-name-form"/>
+    <input [(ngModel)]="meal.details" class="input-sm meal-name-form"/>
     <h4>Calories: </h4>
-    <input [(ngModel)]="meal.alcoholContent" class="input-sm meal-name-form"/>
+    <input [(ngModel)]="meal.calories" class="input-sm meal-name-form"/>
     </div>
   `
 })
