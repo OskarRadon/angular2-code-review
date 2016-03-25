@@ -2,13 +2,10 @@ import { Component } from 'angular2/core';
 import { Meal } from './meal.model';
 
 @Component({
-  selector: 'meal-details',
+  selector: 'edit-meal-details',
   inputs: ['meal'],
   template: `
     <div class="meal-form">
-      <h2>{{ meal.name }}, {{ meal.calories }} cal</h2>
-      <h3><i>{{ meal.details }}</i></h3>
-
       <h3>Edit details</h3>
       <h5>Name: </h5>
       <input [(ngModel)]="meal.name" class="input-sm meal-name-form"/>
@@ -19,6 +16,6 @@ import { Meal } from './meal.model';
     </div>
   `
 })
-export class MealDetailsComponent {
+export class EditMealDetailsComponent {
   public meal: Meal;
 }
